@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "ujwal-mart-15423",
+    "public": "dist/my-first-app",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

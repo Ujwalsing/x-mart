@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="product-image">
+        <img [src]="product?.image" alt="Product Image" class="prod-image">
+    </div>
+    <div class="product-details">
+        <h4 *ngIf="!editMode">{{product?.name}}</h4>
+        <input type="text" [(ngModel)]="product.name" *ngIf="editMode">
+        <h5>{{product?.price}}</h5>
+        <p [ngStyle]="{color: product.status == 'Available'? 'green':'red'}">{{product?.status}}</p>
+        <p><b>Description: </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque, voluptate provident dolor quibusdam repellendus consequuntur non </p>
+        <div class="product-buttons">
+            <a [routerLink]="['/single-product',1]" class="buy-buttom" style="display: block;padding-top: 100px;">Go to first product</a>
+            <button (click)="buyProduct()" style="background-color: rgb(235, 119, 47);" class="buy-button">Buy</button>
+            <button routerLink="/Product" class="back-button" class="showdetail-button" >Back</button>
+            <button (click)="onAddToCart({image: product.image,name: product.name,price: product.price})" class="addtocart-btn">Add to Cart</button>
+            <button (click)="editMode=true" class="showdetail-button"style="background-color: gray;color:white;">Edit</button>
+            <button (click)="editMode=false" [routerLink]="['/single-product',product.id]" class="showdetail-button"style="background-color: gray;color:white;">Update</button>
+        </div>
+        
+    </div>
+    
+</div>

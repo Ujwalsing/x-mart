@@ -1,0 +1,10 @@
+<div class="input-container">
+    <label class="input-label">Parent Component</label>
+    <br>
+    <label for="name" class="input-label" >Name:</label>
+    <input type="text" id="name" class="input-field" [(ngModel)]="name">
+    <label for="number" class="input-label" >Number:</label>
+    <input type="number" id="number" class="input-field" [(ngModel)]="number">
+</div>
+
+<app-second [name]="name" [number]="number" (EmitName)="setName($event)" (EmitNumber)="setNumber($event)"></app-second>

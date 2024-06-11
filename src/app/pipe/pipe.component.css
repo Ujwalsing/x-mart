@@ -1,0 +1,139 @@
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+/* Input field */
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+}
+
+/* Table container for scrolling */
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.header-row {
+  position: sticky;
+  top: 0;
+  background-color: #007bff;
+  color: white;
+  z-index: 1;
+}
+
+.header {
+  text-align: left;
+  padding: 12px;
+  font-weight: bold;
+  border-bottom: 2px solid #dee2e6;
+  background-color: rgb(113, 113, 113);
+}
+
+.user-row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.user-id,
+.user-name,
+.user-location,
+.user-percentage,
+.user-gender,
+.user-date {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.amount-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.amount-input:focus {
+  border-color: #007bff;
+}
+
+/* Button styles */
+.add-profile-btn {
+  padding: 12px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.add-profile-btn:hover {
+  background-color: #218838;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.change-gender-btn{
+  margin-left: 25px;
+  padding: 9.5px 20px;
+  background-color: #959f98;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.change-gender-btn:hover {
+  background-color: #5a5a5a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .table {
+    font-size: 14px;
+  }
+
+  .header, .user-id, .user-name, .user-location, .user-percentage, .user-gender, .user-date {
+    padding: 10px;
+  }
+
+  .search-input, .amount-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .add-profile-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,39 @@
+.app-notification {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  
+  .app-notification span {
+    margin-right: 50px;
+  }
+  
+  .app-notification .close {
+    margin-left: 10px;
+  }
+  
+  .app-notification .btn-close {
+    background-color: transparent;
+    color: #000; /* Adjust button text color to make it darker */
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .app-notification .btn-close:hover {
+    color: #555; /* Darken the color on hover */
+  }
+
+  .fadeout{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+  }
+ 

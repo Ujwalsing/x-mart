@@ -1,0 +1,21 @@
+<app-search (searchChangedFunction)="onSearchTextEntered($event)"></app-search>
+<div class="product-list" >
+    <div *ngFor="let 
+    v of products" class="product-container"  [ngStyle]="{backgroundColor: v.status === 'Available' ? 'White': '#E0E0E0'}" >
+        <div class="product-image"><img [src]="v.image" alt=""></div>
+        <div class="product-info">
+            <h4>{{v.name}}</h4>
+            <div class="price" >{{v.price}}</div>
+            <div class="color" [ngStyle]="{color: v.status === 'Available' ? 'Green' : 'Red'}">{{v.status}}</div>
+        </div>
+        <div class="options">
+            <button class="btn btn-details" routerLink="/single-product/{{v.id}}">Show Details</button>
+            <button class="btn btn-buy" *ngIf="v.status === 'Available'; else notifyme" (click)="login()">Buy Now</button>
+            <ng-template #notifyme>
+                <button class="btn btn-danger" (click)="OnEnroll()">Notify me</button>
+            </ng-template>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+

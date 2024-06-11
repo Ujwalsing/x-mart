@@ -1,0 +1,10 @@
+<div class="container" *ngIf="SalesData.id">
+    <div>
+        <img [src]="SalesData?.image" height="120" width="120" alt="img">
+    </div>
+    <div class="user-div">
+        <div class="user-status">{{SalesData?.name}}</div>
+        <p>Starting from....</p>
+        <div class="user-name">{{SalesData?.date}}</div>
+    </div>
+</div>

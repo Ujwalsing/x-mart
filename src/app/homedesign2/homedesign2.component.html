@@ -1,0 +1,9 @@
+<div class="product-container">
+    <ng-container *ngFor="let product of products">
+      <div class="product" *ngIf="product.id <= 5">
+        <img [src]="product.image" [alt]="product.name">
+        <div class="product-name">{{product.name}}</div>
+        <a routerLink="/Cart" class="add-to-cart">Add to Cart &gt;</a>
+      </div>
+    </ng-container>
+  </div>

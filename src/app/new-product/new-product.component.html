@@ -1,0 +1,24 @@
+<div class="app-notification" [ngClass]="{fadeout: displayNotification}">
+
+    <div class="notification d-flex justify-content-center align-content-center w-100"><p>Upcoming Products</p></div>
+    <button class="btn-close" (click)="closeNotification()"></button>
+</div>
+<div class="product-list">
+    <div *ngFor="let 
+    v of products" class="product-container"  [ngStyle]="{backgroundColor: v.status === 'Available' ? 'White': '#E0E0E0'}" >
+        <div class="product-image"><img [src]="v.image" alt=""></div>
+        <div class="product-info">
+            <h4>{{v.name}}</h4>
+            <div class="price" >{{v.price}}</div>
+            <div class="color" [ngStyle]="{color: v.status === 'Available' ? 'Green' : 'Red'}">{{v.status}}</div>
+        </div>
+        <div class="options">
+            <button class="btn btn-details">Show Details</button>
+            <button class="btn btn-buy" *ngIf="v.status === 'Available'; else notifyme">Buy Now</button>
+            <ng-template #notifyme>
+                <button class="btn btn-danger" (click)="OnEnroll()">Notify me</button>
+            </ng-template>
+        </div>
+    </div>
+</div>
+

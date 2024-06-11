@@ -1,0 +1,103 @@
+/* General styles */
+.bg {
+    background-color: #ffffff; /* Background color for the entire form */
+    padding: 20px; /* Add padding for spacing */
+  }
+  
+  .contact-container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #dddddd; /* Background color for the form container */
+    border-radius: 20px; /* Add rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  
+  .contact-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333; /* Text color for the heading */
+    font-size: 28px;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  /* Label styles */
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555; /* Text color for labels */
+    font-size: 18px;
+  }
+  
+  /* Input styles */
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input[type="text"]:focus,
+  .form-group input[type="email"]:focus,
+  .form-group textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+  }
+  
+  .form-group textarea {
+    height: 120px;
+  }
+  
+  /* Button styles */
+  .form-group button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase; /* Transform text to uppercase */
+    transition: background-color 0.3s ease;
+  }
+  
+/* Button styles */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase; /* Transform text to uppercase */
+    transition: background-color 0.3s ease;
+    outline: none; /* Remove default outline */
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3; /* Button hover background color */
+  }
+  
+  
+  .bg{
+    background-image: url("https://get.pxhere.com/photo/digital-product-technology-electronic-device-gadget-electronics-musical-instrument-accessory-electronic-component-input-device-electronics-accessory-1595236.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 48.8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

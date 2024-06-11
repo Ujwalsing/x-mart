@@ -1,0 +1,97 @@
+/* General styles for the navbar */
+.navbar {
+    background-color: #007bff; /* Dark background for contrast */
+    overflow-x: auto; /* Enable horizontal scrolling on very narrow screens */
+}
+
+/* Styling for the site name/logo */
+.site-name {
+    padding: 10px;
+    font-family: Arial, sans-serif; /* Clean, readable font */
+}
+
+.site-name h2 {
+    color: #fff; /* White text for contrast */
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Styles for the navigation menu */
+.site-menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents horizontal scroll on wider screens */
+}
+
+.site-menu li {
+    padding: 10px;
+}
+
+.site-menu a {
+    display: block;
+    color: #fff; /* White text for contrast */
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.site-menu a:hover {
+    background-color: #315d86;
+}
+
+.toggle-button {
+    display: none;
+    text-align: center;
+    width: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+   .navbar {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+   .site-menu {
+        flex-direction: column;
+    }
+
+   .site-menu li {
+        width: 100%; /* Full width for vertical stacking */
+    }
+
+   .site-menu a {
+        padding: 5px 0; /* Vertical padding instead of horizontal */
+    }
+
+    .site-name{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        margin: 0 15px;
+    }
+
+    /* Optional: Show/hide the navbar on small screens */
+   .toggle-button {
+        display: block;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        width: 75px;
+        /* margin-right: 20px; */
+    }
+
+    .active {
+        background-color: rgb(88, 86, 86);
+        color: blue;
+        border-radius: 4px;
+    }
+
+
+}

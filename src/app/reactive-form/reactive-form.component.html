@@ -1,0 +1,58 @@
+<form class="form-container" [formGroup]="reactiveForm" (ngSubmit)="onSubmit()" >
+    <div class="form-group" formGroupName="personalDetails">
+      <label class="form-label" for="username">Username:</label>
+      <input type="text" id="username" class="form-input" name="username" required formControlName="username">
+    <!-- </div> -->
+    <!-- <div class="form-group"> -->
+      <label class="form-label" for="email">Email:</label>
+      <input type="email" id="email" class="form-input" name="email" required formControlName="email" email>
+      <span style="color: red" *ngIf="reactiveForm.get('personalDetails.email').valid ">The email you have entered is not a valid email.</span>
+    <!-- </div>
+    <div class="form-group"> -->
+      
+    <!-- </div> -->
+
+      <label>Product:</label>
+      <ng-container *ngFor="let product of reactiveForm.get('products')['controls']">
+        <input type="text"  class="form-input" placeholder="add products...." >
+      </ng-container>
+      <button (click)="addProducts()">+ Add Product</button>
+  </div>
+  <label class="form-label" for="password">Password:</label>
+  <input type="password" id="password" class="form-input" name="password" required formControlName="password">
+    <div class="form-group">
+      <label class="form-label" for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" class="form-input" name="confirmPassword" required formControlName="confirmpassword">
+      <ng-container *ngFor="let error of errors">
+          <span class="text-danger" *ngIf="reactiveForm.get('confirmpassword').errors?.[error.errorCondition] && reactiveForm.get('confirmpassword').touched">{{error.statement}}</span>
+      </ng-container> 
+            
+  
+      <!-- <span  style= "color: red;" *ngIf="reactiveForm.get('confirmpassword').errors?.['required'] && reactiveForm.get('confirmpassword').touched">Please input the field.</span>
+      <span style="color: red;" *ngIf="reactiveForm.get('confirmpassword').errors?.['mustMatch']">Password and confirm password are not equal.</span> -->
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="country">Country:</label>
+      <select id="country" class="form-input" name="country" required formControlName="country">
+        <option value="">Select Country</option>
+        <option value="india">India</option>
+        <option value="usa">USA</option>
+        <option value="uk">UK</option>
+        <!-- Add more options as needed -->
+      </select>
+      <span *ngIf="reactiveForm.get('country').errors?.['country']">Please choose the company.</span>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Gender:</label>
+      <div class="radio-group">
+        <input type="radio" id="male" value="male" name="gender" class="radio-input" required formControlName="gender">
+        <label for="male" class="radio-label">Male</label>
+        <input type="radio" id="female" value="female" name="gender" class="radio-input" required formControlName="gender">
+        <label for="female" class="radio-label">Female</label>
+        <input type="radio" id="other" value="other" name="gender" class="radio-input" required formControlName="gender">
+        <label for="other" class="radio-label">Other</label>
+      </div>
+    </div>
+    <button type="submit" class="submit-button">Register</button>
+  </form>
+  

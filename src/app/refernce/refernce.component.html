@@ -1,0 +1,11 @@
+<div>
+    <label>Date Of Birth: </label>
+    <input type="date" #dateData (blur)="displaydata()">
+</div>
+<div>
+    <label>Age: </label>
+    <input type="number" #ageData (blur)="displaydata()">
+</div>
+<app-demo></app-demo>
+
+{{demoComp.sayHello()}}

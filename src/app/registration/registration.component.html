@@ -1,0 +1,78 @@
+<div class="registration-form">
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+      <div ngModelGroup="personalDetails" #personalDetails="ngModelGroup">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" type="text" name="username" required  ngModel #fname="ngModel">
+
+          <!-- <div>
+              <small *ngIf="fname.invalid && fname.touched">Username is required field.</small>
+          </div> -->
+       
+        </div>
+    
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required ngModel email>
+
+        </div>
+        
+    
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" required  ngModel>
+        </div>
+  
+        <div class="form-group">
+          <label for="Country">Country</label>
+              <select name="Country" ngModel>
+                  <option value="India">India</option>
+                  <option value="Russia">Russia</option>
+              </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Gender:</label>
+          <span *ngFor="let gen of Gender" class="radio-wrapper">
+            <div class="radio-group">
+              <input type="radio" id="{{gen.id}}" value="{{gen.value}}" name="gender" class="radio-input" [(ngModel)]="defaultGender">
+              <label for="{{gen.id}}" class="radio-label">{{gen.value}}</label>
+            </div>
+          </span>
+        </div>
+        
+        
+      </div>
+
+      <div>
+        <small *ngIf="personalDetails.invalid && personalDetails.touched" >Please enter the valid data.</small>
+      </div>
+      <button type="submit" (click)="setDefaultValue()">Set default value</button>
+      <button type="submit" >Register</button>
+    </form>
+
+    <form class="form-container">
+      <div class="form-group">
+        <label class="form-label">Username:</label>
+        <p class="form-value">{{username}}</p>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email:</label>
+        <p class="form-value">{{email}}</p>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password:</label>
+        <p class="form-value">{{password}}</p>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Country:</label>
+        <p class="form-value">{{Country}}</p>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Gender:</label>
+        <p class="form-value">{{gender}}</p>
+      </div>
+    </form>
+    
+  </div>
+  

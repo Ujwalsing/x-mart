@@ -1,0 +1,18 @@
+<div class="about-container">
+    <h5>Who are we and look at our designation!</h5>
+  
+    <div class="profile-cards">
+      <div *ngFor="let profile of profiles; let i = index" class="profile-card">
+        <img [src]="profile.image" alt="{{ profile.name }} Profile Image" class="profile-image">
+        <div class="profile-details">
+          <h3>{{ profile.name | uppercase}}</h3>
+          <p>{{profile.designation}}</p>
+          <a [href]="profile.linkedin" target="_blank" class="linkedin-link">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  
+
+  </div>
+<app-footer></app-footer>
+  

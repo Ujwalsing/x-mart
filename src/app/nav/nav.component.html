@@ -1,0 +1,14 @@
+<div class="navbar">
+    <div class="site-name">
+        <h2>{{logoName}}</h2>
+        <button class="toggle-button" (click)="isMenuVisible = !isMenuVisible">☰ </button>
+    </div>
+    <ul class="site-menu" *ngIf="isMenuVisible">
+        <li routerLinkActive="active"><a routerLink="Home"  routerLinkActiveOptions="{exact: true}">HOME</a></li>
+        <li routerLinkActive="active"><a routerLink="About">ABOUT</a></li>
+        <li routerLinkActive="active"><a routerLink="Contact">CONTACT</a></li>
+        <li routerLinkActive="active"><a routerLink="Cart">CART</a></li>
+        <li routerLinkActive="active"><a routerLink="Product">PRODUCT</a></li>
+        <li routerLinkActive="active"><a (click)="logout()">LOGOUT</a></li>
+    </ul>
+</div>

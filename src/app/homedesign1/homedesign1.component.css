@@ -1,0 +1,43 @@
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  max-width: 1200px; /* Maximum width for large screens */
+  margin: 0 auto; /* Center the slider on the page */
+}
+
+.slider {
+  display: flex;
+  width: 300%; /* 3 images, each 100% width */
+  animation: slide 12s infinite;
+}
+
+.slider img {
+  width: 33.33%; /* 3 images in total, each image taking 33.33% of the slider width */
+  flex-shrink: 0;
+  object-fit: cover; /* Ensures images cover the entire container without distortion */
+  max-height: 500px; /* Maximum height for images */
+}
+
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  20% { transform: translateX(0%); }
+  25% { transform: translateX(-100%); }
+  45% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  70% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  95% { transform: translateX(-300%); }
+  100% { transform: translateX(0%); }
+}
+
+/* Make the slider responsive */
+@media (max-width: 768px) {
+  .slider-container {
+    max-width: 100%;
+  }
+
+  .slider img {
+    max-height: 300px;
+  }
+}

@@ -1,0 +1,35 @@
+<input type="text" class="search-input" placeholder="Search by" [(ngModel)]="filterText">
+<br>
+<div>
+  <h3>Total Profile Entry: {{totalProfiles | async}}</h3>
+</div>
+<div class="table-container">
+  <table class="table table-striped" (mousemove)="onMouseMove()">
+    <thead>
+      <tr class="header-row">
+        <th scope="col" class="header">Id</th>
+        <th scope="col" class="header">Name</th>
+        <th scope="col" class="header">Location</th>
+        <th scope="col" class="header">Amount</th>
+        <th scope="col" class="header">Percentage</th>
+        <th scope="col" class="header">Gender</th>
+        <th scope="col" class="header">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let user of data | filterProfileData: filterText" class="user-row">   -->
+      <tr *ngFor="let user of filteredProfile" class="user-row">
+        <td class="user-id">{{user.id}}</td>
+        <td class="user-name">{{ user.name | uppercase }}</td>
+        <td class="user-location">{{ user.location | lowercase }}</td>
+        <td><input type="number" class="amount-input" [(ngModel)]="user.Amount"></td>
+        <td class="user-percentage">{{ user.Amount | percentage: 100 | percent }}</td>
+        <td class="user-gender">{{ user.Gender }}</td>
+        <td class="user-date">{{ user.Date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button class="add-profile-btn" (click)="addProfile()">Add Profile</button>
+<button class="change-gender-btn" (click)="changeGender()">Change Gender</button>
+

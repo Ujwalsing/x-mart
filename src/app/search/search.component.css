@@ -1,0 +1,32 @@
+div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust margin as needed */
+  }
+  
+  span {
+    margin-right: 10px; /* Adjust margin as needed */
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .search-block{
+    padding-left: 65px;
+    background-color: rgb(168, 168, 168);
+    border-radius: 7px;
+    padding: 5px
+    
+  }
+  .search{
+    padding-left: 20vh;
+  }
+
+
+  .changeBackground{
+    background-color: rgb(83, 83, 83);
+  }
+  

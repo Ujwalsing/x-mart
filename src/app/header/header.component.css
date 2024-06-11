@@ -1,0 +1,75 @@
+/* Navbar styles */
+.navbar {
+    background-color: #6b2828; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space elements evenly */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Site name styles */
+.site-name h2 {
+    margin: 0; /* Remove default margin */
+    font-size: 24px; /* Increase font size */
+    font-weight: 700; /* Bold font weight */
+}
+
+/* Site menu styles */
+.site-menu a {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    margin-right: 15px; /* Spacing between links */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Site menu link hover styles */
+.site-menu a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #ffc107; /* Change text color on hover */
+}
+
+/* Header styles */
+.header {
+    text-align: center; /* Center align content */
+    margin-bottom: 40px; /* Add spacing at the bottom */
+}
+
+/* Site image styles */
+.site-image img {
+    width: 270px; /* Set width */
+    height: 240px; /* Set height */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add shadow for depth */
+    display: inline-block;
+}
+
+/* Site slogan styles */
+.site-slogan h2 {
+    margin: 10px 0; /* Add margin */
+    font-size: 20px; /* Adjust font size */
+    display: inline-block;
+}
+
+/* Add these styles to your header.component.css */
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap; /* Ensure slides stay on a single line */
+}
+
+.slide {
+  display: inline-block;
+  width: 100%;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.header:hover .slide {
+  transform: translateX(-25%); /* Adjust this value to control slide width */
+}
+

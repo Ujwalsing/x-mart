@@ -1,0 +1,49 @@
+.filter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+.filter-option {
+    margin-right: 20px;
+}
+
+.filter-option input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+
+.filter-option span {
+    margin-right: 20px;
+}
+
+.filter-option input[type="radio"]:checked {
+    background-color: #1c1b1b;
+}
+
+.search-block {
+    padding-left: 65px;
+    background-color: rgb(168, 168, 168);
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.search {
+    padding-left: 20vh;
+}
+
+.changeBackground {
+    background-color: rgb(0, 0, 0);
+}
+.input{
+    margin-left:10px;
+    
+}

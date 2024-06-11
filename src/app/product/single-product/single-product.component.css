@@ -1,0 +1,101 @@
+/* Ensure the container takes up the whole page */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Container for the entire product */
+.container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100%; /* Full height */
+    background-color: #fff; /* White background */
+    padding: 20px; /* Padding around the content */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 800px; /* Max width of the container */
+    margin: auto; /* Center the container horizontally */
+    text-align: center; /* Center text */
+}
+
+/* Container for the product image */
+.product-image {
+    margin-bottom: 20px; /* Space between image and details */
+}
+
+.product-image img {
+    max-width: 100%; /* Ensure the image fits within its container */
+    border-radius: 8px; /* Rounded corners for the image */
+}
+
+/* Container for the product details */
+.product-details {
+    display: flex;
+    flex-direction: column; /* Stack the details vertically */
+    align-items: center; /* Center the details horizontally */
+    width: 100%;
+    position: relative;
+    height: 300px;
+    margin-left: 30px;
+}
+
+.product-details p {
+    margin: 5px 0; /* Margin around each detail */
+    font-size: 16px; /* Font size for the details */
+    color: #333; /* Text color */
+}
+
+/* Style for buttons */
+.product-buttons {
+    margin-top: 20px; /* Space above buttons */
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.product-buttons button {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding inside the button */
+    margin: 5px; /* Space between buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.product-buttons button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.prod-image{
+    max-height: 350px;
+    filter: drop-shadow(10px 10px 20px black);
+}
+.back-button{
+    background-color: #0099ff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding inside the button */
+    margin: 5px; /* Space between buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.product-buttons button:last-child{
+    float: right;
+}
+.showdetail-button{
+    background-color: gray;
+    color:white;
+}
+.addtocart-btn{
+    color:black;
+    background-color: white;
+}
