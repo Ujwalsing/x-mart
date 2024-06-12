@@ -3,7 +3,7 @@
       <div class="product" *ngIf="product.id <= 5">
         <img [src]="product.image" [alt]="product.name">
         <div class="product-name">{{product.name}}</div>
-        <a routerLink="/Cart" class="add-to-cart">Add to Cart &gt;</a>
+        <a (click)="onAddToCart({image: product.image,name: product.name,price: product.price})"  class="add-to-cart">Add to Cart &gt;</a>
       </div>
     </ng-container>
   </div>

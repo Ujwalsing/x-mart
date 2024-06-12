@@ -11,7 +11,9 @@ export class ProductFormComponent {
 
   onProductCreate(products: {pCompany: string, pDesc: string, pPrice: number}){
     console.log(products);
-    this.http.post('https://ujwal-mart-15423-default-rtdb.firebaseio.com/productDescription.json',products);
+    this.http.post('https://ujwal-mart-15423-default-rtdb.firebaseio.com/productDescription.json',products).subscribe((res) =>{
+      console.log(res);
+    });
     
   }
 }

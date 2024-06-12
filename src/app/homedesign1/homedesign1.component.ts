@@ -10,11 +10,6 @@ export class Homedesign1Component {
   @ViewChild('imageSlider') slider: NgImageSliderComponent;
   imageObject: Array<object> = [
     {
-      image: 'assets/image/airpod.png',
-      thumbImage: 'assets/image/adv3.jpg',
-      title: 'Airpod',
-    },
-    {
       image: 'assets/image/phone.png',
       thumbImage: 'assets/image/phone.png',
       title: 'Phone',

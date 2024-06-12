@@ -1,6 +1,9 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+
+
+import { ProductHttp } from 'src/app/Services/productHTTP.service';
 import { product } from 'src/app/Services/productdetails.service';
 
 
@@ -14,15 +17,25 @@ export class SingleProductComponent implements OnInit,OnDestroy{
   productId :number;
   paramsRouteObs;
   editMode:boolean = false;
+  allProducts = [];
+  productsService = this.allProducts;
+  ProductName = this.product.name;
+  
 
   onEmitProductData = new EventEmitter<{productimage: string,productname: string,productprice: string}>();
 
-  constructor(private acitveroute: ActivatedRoute, private productdetails : product, private router: Router){};
+  constructor(private productService: ProductHttp, private acitveroute: ActivatedRoute, private productdetails : product, private router: Router, private http: HttpClient, private productDetail: product){};
   ngOnInit(): void {
-      // this.productId = +this.acitveroute.snapshot.params['id']; This is for snapshot the behaviour is url is static rather than dynamic
-      this.paramsRouteObs = this.acitveroute.paramMap.subscribe((param)=>{
+
+        console.log(this.ProductName);
+        // this.productId = +this.acitveroute.snapshot.params['id']; This is for snapshot the behaviour is url is static rather than dynamic
+        this.paramsRouteObs = this.acitveroute.paramMap.subscribe((param)=>{
         this.productId = +param.get('id');
         this.product = this.productdetails.allProducts.find(x => x.id === this.productId);
+        this.productDetail.getAllProducts().then((data)=>{
+              this.productService = data;
+        })
+        console.log(this.productService);
       })
      
       console.log(this.productId);
@@ -37,13 +50,13 @@ export class SingleProductComponent implements OnInit,OnDestroy{
     alert('Product bought!');
   }
   showDetails(): void {
-    // Implement show details logic here
+    // Implement show details logic heres
     alert('Product details shown!');
   }
 
   onAddToCart(data: {productimage: string,productname: string,productprice: string}){
-      console.log(data);
-      this.onEmitProductData.emit(data);
+      this.productService.addToProduct(data);
+      this.productService.fetchProduct();
       
    }
 
@@ -55,6 +68,10 @@ export class SingleProductComponent implements OnInit,OnDestroy{
 
     this.router.navigate(['/product/single-product',this.productId], {queryParams:{edit: false}});
     
+  }
+
+  onClickEdit(element : HTMLInputElement){
+    console.log(element.value); 
   }
 
   ngOnDestroy(){

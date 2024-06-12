@@ -1,11 +1,17 @@
 {
   "hosting": {
-    "site": "ujwal-mart-15423",
+    "site":"xmart-ujwal",
     "public": "dist/my-first-app",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }

@@ -1,3 +1,23 @@
-<p>cart works!</p>
-<button (click)="click()">Pipe Topic</button>
-<app-product-form></app-product-form>
+<div class="cart-container">
+    <button (click)="clearAllProduct()">Clear all product</button>
+    <p></p>
+    <div *ngFor="let product of allProducts" class="cart-item">
+      <div *ngIf="isFetching">
+        <p>Loading....</p>
+      </div>
+      <div class="product-image">
+        <img [src]="product.image" alt="{{product.name}}">
+      </div>
+      <div class="product-details">
+        <p class="product-name">{{product.name}}</p>
+        <p class="product-price">{{product.price}}</p>
+        <button (click)="removeFromCart(product.id)">Remove</button>
+
+      </div>
+      </div>
+      <div *ngIf="allProducts?.length === 0" class="empty-cart">
+          <p>Your cart is empty.</p>
+          </div>
+  </div>
+  <app-footer></app-footer>
+  
